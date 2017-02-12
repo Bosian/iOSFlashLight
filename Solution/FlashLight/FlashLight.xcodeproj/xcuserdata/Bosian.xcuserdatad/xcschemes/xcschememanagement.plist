@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>FlashLight WatchKit App.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>FlashLight.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>96F18B4B1E507F1500C7CB31</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>96F18B5F1E507F1500C7CB31</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>96F18B6A1E507F1500C7CB31</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>96F18B731E507F1500C7CB31</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

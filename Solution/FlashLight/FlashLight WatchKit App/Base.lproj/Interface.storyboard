@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="FlashLight_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <switch width="1" alignment="left" value="YES" title="手錶螢幕" id="vfc-ZY-LMQ">
+                            <connections>
+                                <action selector="watchScreenHandler:" destination="AgC-eL-Hgc" id="h8x-yn-10V"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" value="YES" title="手機螢幕" id="W6g-oR-C5o">
+                            <connections>
+                                <action selector="phoneScreenHandler:" destination="AgC-eL-Hgc" id="XlL-rd-shb"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" value="YES" title="手機手電筒" id="YKm-UQ-YiP">
+                            <connections>
+                                <action selector="phoneFlashLightHandler:" destination="AgC-eL-Hgc" id="DGo-0q-447"/>
+                            </connections>
+                        </switch>
+                    </items>
+                    <connections>
+                        <outlet property="phoneFlashLightSwitch" destination="YKm-UQ-YiP" id="kjV-XS-XCQ"/>
+                        <outlet property="phoneScreenSwitch" destination="W6g-oR-C5o" id="KIQ-uA-hbb"/>
+                        <outlet property="watchScreenSwitch" destination="vfc-ZY-LMQ" id="JwG-Y8-cTp"/>
+                    </connections>
+                </controller>
+            </objects>
+        </scene>
+    </scenes>
+</document>
