@@ -7,24 +7,59 @@
 //
 
 import UIKit
+import WatchConnectivity
 
-struct InterfaceViewModel {
+struct InterfaceViewModel: MutatingClosure {
     
-    var isWatchScreenLight: Bool = false {
+    weak var binder: Binder?
+    var isUpdate: Bool = false
+    
+    var model: MainModel = MainModel() {
         didSet {
             
+            guard !isUpdate else {
+                return
+            }
+            
+            isUpdate = true
+            
+            let copySelf = self
+            
+            WCSession.default().activate()
+            
+            WCSession.default().sendMessage(model.toDictionary(), replyHandler: { (jsonDictionary) in
+                print(jsonDictionary)
+                
+                // UI Thread
+                DispatchQueue.main.async {
+                    guard var mutatingSelf = copySelf.closureForViewModel() else {
+                        return
+                    }
+                    
+                    mutatingSelf.isUpdate = false
+                    
+                    copySelf.setClosure(for: mutatingSelf)
+                }
+                
+            }) { (error) in
+                print(error)
+                
+                // UI Thread
+                DispatchQueue.main.async {
+                    guard var mutatingSelf = copySelf.closureForViewModel() else {
+                        return
+                    }
+                    
+                    mutatingSelf.isUpdate = false
+                    
+                    copySelf.setClosure(for: mutatingSelf)
+                }
+            }
         }
     }
     
-    var isPhoneScreenLight: Bool = false {
-        didSet {
-            
-        }
-    }
-    
-    var isPhoneFlashLight: Bool = false {
-        didSet {
-            
-        }
+    init(binder: Binder)
+    {
+        self.binder = binder
     }
 }

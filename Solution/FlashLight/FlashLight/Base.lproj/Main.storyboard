@@ -21,25 +21,119 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0CA-ao-sdv">
-                                <rect key="frame" x="163" y="28" width="51" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="dP9-EN-1KG"/>
-                                    <constraint firstAttribute="width" constant="49" id="wiB-ly-W7a"/>
-                                </constraints>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uJs-5S-czM">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" red="0.0" green="0.0040947012603282928" blue="0.00010385423229308799" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <view key="tableFooterView" hidden="YES" contentMode="scaleToFill" id="s6P-Wj-zx3" userLabel="dummyView">
+                                    <rect key="frame" x="0.0" y="116" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="normal" id="728-nb-rBx" customClass="MainNormalCell" customModule="FlashLight" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="728-nb-rBx" id="8ha-MO-Pgv">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4bi-sl-cqL">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="螢幕" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FpR-Pm-SsH">
+                                                            <rect key="frame" x="8" y="8" width="300" height="27"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AXk-pd-w5f">
+                                                            <rect key="frame" x="318" y="8" width="51" height="27"/>
+                                                            <connections>
+                                                                <action selector="flashSwitchHandler:" destination="728-nb-rBx" eventType="valueChanged" id="F0l-po-ZPE"/>
+                                                            </connections>
+                                                        </switch>
+                                                    </subviews>
+                                                    <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                                </stackView>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.12791514400000001" green="0.13761638100000001" blue="0.13352859019999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="4bi-sl-cqL" secondAttribute="bottom" id="D9U-aR-tWf"/>
+                                                <constraint firstAttribute="trailing" secondItem="4bi-sl-cqL" secondAttribute="trailing" id="DGg-gp-jMG"/>
+                                                <constraint firstItem="4bi-sl-cqL" firstAttribute="top" secondItem="8ha-MO-Pgv" secondAttribute="top" id="Hc8-oZ-hI0"/>
+                                                <constraint firstItem="4bi-sl-cqL" firstAttribute="leading" secondItem="8ha-MO-Pgv" secondAttribute="leading" id="f3V-ix-VAb"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.12791514400000001" green="0.13761638100000001" blue="0.13352859019999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <outlet property="flashSwitch" destination="AXk-pd-w5f" id="8N1-Sn-jH9"/>
+                                            <outlet property="titleLabel" destination="FpR-Pm-SsH" id="1ds-sO-Rgr"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="adjustable" id="SCg-D3-7q8" customClass="MainAdjustableCell" customModule="FlashLight" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SCg-D3-7q8" id="V7X-dV-eBr">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OtK-Oq-Y0q">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="手電筒" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CS0-lO-h7c">
+                                                            <rect key="frame" x="8" y="8" width="52" height="27"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.10000000000000001" minValue="0.10000000000000001" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fiT-4Y-oe8">
+                                                            <rect key="frame" x="68" y="8" width="242" height="28"/>
+                                                            <connections>
+                                                                <action selector="sliderHandler:" destination="SCg-D3-7q8" eventType="valueChanged" id="1fr-2v-zPj"/>
+                                                            </connections>
+                                                        </slider>
+                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="92e-c5-l7L">
+                                                            <rect key="frame" x="318" y="8" width="51" height="27"/>
+                                                            <connections>
+                                                                <action selector="flashSwitchHandler:" destination="SCg-D3-7q8" eventType="valueChanged" id="tVK-Ng-HOj"/>
+                                                            </connections>
+                                                        </switch>
+                                                    </subviews>
+                                                    <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                                </stackView>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.1279151439666748" green="0.13761638104915619" blue="0.13352859020233154" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="OtK-Oq-Y0q" secondAttribute="bottom" id="9Of-Pi-qkw"/>
+                                                <constraint firstItem="OtK-Oq-Y0q" firstAttribute="top" secondItem="V7X-dV-eBr" secondAttribute="top" id="ET7-VJ-PSh"/>
+                                                <constraint firstAttribute="trailing" secondItem="OtK-Oq-Y0q" secondAttribute="trailing" id="HTf-DO-qWa"/>
+                                                <constraint firstItem="OtK-Oq-Y0q" firstAttribute="leading" secondItem="V7X-dV-eBr" secondAttribute="leading" id="Zg9-qH-hA7"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.1279151439666748" green="0.13761638104915619" blue="0.13352859020233154" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <outlet property="flashSwitch" destination="92e-c5-l7L" id="RE1-WZ-zaV"/>
+                                            <outlet property="slider" destination="fiT-4Y-oe8" id="eEy-d2-hv5"/>
+                                            <outlet property="titleLabel" destination="CS0-lO-h7c" id="qc7-ez-qxJ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <action selector="flashLightHandler:" destination="BYZ-38-t0r" eventType="valueChanged" id="DKn-ob-0G1"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="BmD-EP-fQr"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="6Av-I5-4IW"/>
                                 </connections>
-                            </switch>
+                            </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0040947012603282928" blue="0.00010385423229308799" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="0CA-ao-sdv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="LMw-9C-A4g"/>
-                            <constraint firstItem="0CA-ao-sdv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tck-xR-cVW"/>
+                            <constraint firstItem="uJs-5S-czM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="O8m-aO-wU1"/>
+                            <constraint firstAttribute="trailing" secondItem="uJs-5S-czM" secondAttribute="trailing" id="ghc-CO-Poy"/>
+                            <constraint firstItem="uJs-5S-czM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="mdz-wV-OHf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uJs-5S-czM" secondAttribute="bottom" id="ocU-vK-oFR"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="flashLightSwitch" destination="0CA-ao-sdv" id="WkJ-gG-l3s"/>
+                        <outlet property="tableView" destination="uJs-5S-czM" id="cEH-Xl-Y1j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
