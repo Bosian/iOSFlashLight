@@ -28,7 +28,7 @@ extension Utilities
         }
     }
     
-    public static var phoneFlashValue: Float {
+    public static var phoneFlashLightValue: Float {
         get {
             guard let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo) else
             {

@@ -76,6 +76,11 @@ struct MainViewModel: MutatingClosure, Updateable {
         Utilities.isPhoneScreenOn = model.isPhoneScreenLight
         Utilities.isPhoneFlashOn = model.isPhoneFlashLight
         
+        if model.isPhoneFlashLight
+        {
+            Utilities.phoneFlashLightValue = model.phoneFlashLightValue
+        }
+        
         self.cellViewModels = [
             
             .normal(
@@ -120,14 +125,27 @@ struct MainViewModel: MutatingClosure, Updateable {
                 MainAdjustableCellViewModel(
                     model: model,
                     title: "手機手電筒",
-                    value: 1,
+                    value: model.phoneFlashLightValue,
                     isOn: model.isPhoneFlashLight,
                     indexPath: IndexPath(row: 2, section: 0),
                     isValueHandler: { (indexPath, oldValue, newValue, cellViewModel) -> Void in
                         
+                        guard var mutatingSelf = copySelf.closureForViewModel() else {
+                            return
+                        }
+                        
                         // 手電筒開關
                         let isOnOldValue = cellViewModel.isOn
                         let isOnNewValue = newValue > 0.0
+                        
+                        mutatingSelf.model.phoneFlashLightValue = newValue
+                        
+                        copySelf.setClosure(for: mutatingSelf)
+                        
+                        // 有變更才通知手電筒開關
+                        guard isOnNewValue != isOnOldValue else {
+                            return
+                        }
                         
                         cellViewModel.isOnHandler(indexPath, isOnOldValue, isOnNewValue, cellViewModel)
                     },

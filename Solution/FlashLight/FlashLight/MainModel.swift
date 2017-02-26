@@ -11,6 +11,7 @@ struct MainModel: JsonSerializeable, JsonDeserializeable, Equatable {
     var isWatchScreenLight: Bool = false
     var isPhoneScreenLight: Bool = false
     var isPhoneFlashLight: Bool = false
+    var phoneFlashLightValue: Float = 0.1
     
     public init()
     {
