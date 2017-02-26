@@ -9,7 +9,7 @@
 import UIKit
 import WatchConnectivity
 
-struct MainViewModel: MutatingClosure {
+struct MainViewModel: MutatingClosure, Updateable {
     
     weak var binder: Binder?
     var isUpdate: Bool = false
@@ -80,6 +80,7 @@ struct MainViewModel: MutatingClosure {
             
             .normal(
                 MainNormalCellViewModel(
+                    model: model,
                     title: "手錶螢幕",
                     isOn: model.isWatchScreenLight,
                     indexPath: IndexPath(row: 0, section: 0),
@@ -98,6 +99,7 @@ struct MainViewModel: MutatingClosure {
             
             .normal(
                 MainNormalCellViewModel(
+                    model: model,
                     title: "手機螢幕",
                     isOn: model.isPhoneScreenLight,
                     indexPath: IndexPath(row: 1, section: 0),
@@ -116,6 +118,7 @@ struct MainViewModel: MutatingClosure {
             
             .adjustable(
                 MainAdjustableCellViewModel(
+                    model: model,
                     title: "手機手電筒",
                     value: 1,
                     isOn: model.isPhoneFlashLight,

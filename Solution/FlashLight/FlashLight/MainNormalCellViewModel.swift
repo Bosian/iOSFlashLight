@@ -10,6 +10,8 @@ import UIKit
 
 struct MainNormalCellViewModel {
     
+    let model: MainModel
+    
     let title: String
     
     var isOn: Bool {
@@ -24,12 +26,14 @@ struct MainNormalCellViewModel {
     
     let isOnHandler: (_ indexPath: IndexPath, _ oldValue: Bool, _ newValue: Bool, _ viewModel: MainNormalCellViewModel) -> Void
     
-    init(title: String,
+    init(model: MainModel,
+         title: String,
          isOn: Bool,
          indexPath: IndexPath,
          isOnHandler: @escaping (_ indexPath: IndexPath, _ oldValue: Bool, _ newValue: Bool, _ viewModel: MainNormalCellViewModel) -> Void
         )
     {
+        self.model = model
         self.title = title
         self.isOn = isOn
         self.indexPath = indexPath

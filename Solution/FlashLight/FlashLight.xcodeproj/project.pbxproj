@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9626DEB91E62FF9100EA0D23 /* Progressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9626DEB81E62FF9100EA0D23 /* Progressor.swift */; };
+		9626DEBB1E63011D00EA0D23 /* Updateable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9626DEBA1E63011D00EA0D23 /* Updateable.swift */; };
 		9627ED571E58DB81004B9F0E /* MutatingClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E2B7621E5891C800C090F7 /* MutatingClosure.swift */; };
 		9627ED581E58DB87004B9F0E /* Binder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9641BC581E588ACE007774C4 /* Binder.swift */; };
 		9627ED591E58DB91004B9F0E /* Viewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9641BC631E588D50007774C4 /* Viewer.swift */; };
@@ -127,6 +129,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9626DEB81E62FF9100EA0D23 /* Progressor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Progressor.swift; sourceTree = "<group>"; };
+		9626DEBA1E63011D00EA0D23 /* Updateable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Updateable.swift; sourceTree = "<group>"; };
 		962961421E5898A400C5218C /* MainNormalCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNormalCellViewModel.swift; sourceTree = "<group>"; };
 		962961471E589AB700C5218C /* StringConvertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringConvertable.swift; sourceTree = "<group>"; };
 		962961491E589B5A00C5218C /* ValueRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueRepresentable.swift; sourceTree = "<group>"; };
@@ -277,6 +281,8 @@
 				96E2B7621E5891C800C090F7 /* MutatingClosure.swift */,
 				962961471E589AB700C5218C /* StringConvertable.swift */,
 				962961491E589B5A00C5218C /* ValueRepresentable.swift */,
+				9626DEB81E62FF9100EA0D23 /* Progressor.swift */,
+				9626DEBA1E63011D00EA0D23 /* Updateable.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -694,6 +700,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9641BC641E588D50007774C4 /* Viewer.swift in Sources */,
+				9626DEB91E62FF9100EA0D23 /* Progressor.swift in Sources */,
 				96F18BAB1E507F7000C7CB31 /* MainViewModel.swift in Sources */,
 				9632E5F81E58CF4E0070DE8C /* Utilities.swift in Sources */,
 				96E2B7631E5891C800C090F7 /* MutatingClosure.swift in Sources */,
@@ -708,6 +715,7 @@
 				9629614A1E589B5A00C5218C /* ValueRepresentable.swift in Sources */,
 				9632E5FC1E58D1930070DE8C /* MainModel.swift in Sources */,
 				9641BC621E588C8F007774C4 /* MainNormalCell.swift in Sources */,
+				9626DEBB1E63011D00EA0D23 /* Updateable.swift in Sources */,
 				9632E5EF1E58CE120070DE8C /* PropertyConverters.swift in Sources */,
 				9632E5F31E58CE120070DE8C /* ArrayType.swift in Sources */,
 				96E2B7651E58975400C090F7 /* MainAdjustableCell.swift in Sources */,

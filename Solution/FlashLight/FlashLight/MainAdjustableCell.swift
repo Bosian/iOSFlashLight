@@ -21,6 +21,7 @@ class MainAdjustableCell: UITableViewCell, Binder, Viewer {
             titleLabel.text = viewModel.title
             slider.value = viewModel.value
             flashSwitch.isOn = viewModel.isOn
+            titleLabel.textColor = viewModel.model.isPhoneScreenLight ? .black : .white
         }
     }
     

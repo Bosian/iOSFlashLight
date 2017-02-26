@@ -9,6 +9,9 @@
 import UIKit
 
 struct MainAdjustableCellViewModel {
+    
+    let model: MainModel
+    
     let title: String
     
     var value: Float {
@@ -36,14 +39,16 @@ struct MainAdjustableCellViewModel {
     
     let isOnHandler: (_ indexPath: IndexPath, _ oldValue: Bool, _ newValue: Bool, _ viewModel: MainAdjustableCellViewModel) -> Void
     
-    init(title: String,
-        value: Float,
-        isOn: Bool,
-        indexPath: IndexPath,
-        isValueHandler: @escaping (_ indexPath: IndexPath, _ oldValue: Float, _ newValue: Float, _ viewModel: MainAdjustableCellViewModel) -> Void,
-        isOnHandler: @escaping (_ indexPath: IndexPath, _ oldValue: Bool, _ newValue: Bool, _ viewModel: MainAdjustableCellViewModel) -> Void
+    init(model: MainModel,
+         title: String,
+         value: Float,
+         isOn: Bool,
+         indexPath: IndexPath,
+         isValueHandler: @escaping (_ indexPath: IndexPath, _ oldValue: Float, _ newValue: Float, _ viewModel: MainAdjustableCellViewModel) -> Void,
+         isOnHandler: @escaping (_ indexPath: IndexPath, _ oldValue: Bool, _ newValue: Bool, _ viewModel: MainAdjustableCellViewModel) -> Void
         )
     {
+        self.model = model
         self.title = title
         self.value = value
         self.isOn = isOn

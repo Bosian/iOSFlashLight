@@ -18,6 +18,7 @@ class MainNormalCell: UITableViewCell, Binder, Viewer {
         didSet {
             titleLabel.text = viewModel.title
             flashSwitch.isOn = viewModel.isOn
+            titleLabel.textColor = viewModel.model.isPhoneScreenLight ? .black : .white
         }
     }
     

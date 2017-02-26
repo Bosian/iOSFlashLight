@@ -9,14 +9,29 @@
 import UIKit
 import WatchConnectivity
 
-final class MainViewController: UIViewController, Viewer, Binder {
+final class MainViewController: UIViewController, Viewer, Binder, Progressor {
 
     @IBOutlet weak var tableView: UITableView!
+    
+    var defaultBackgroundColor: UIColor!
     
     typealias ViewModelType = MainViewModel
     var viewModel: ViewModelType! {
         didSet {
+            showProgressIfNeeded()
+            
             tableView.reloadData()
+            
+            if viewModel.model.isPhoneScreenLight
+            {
+                view.backgroundColor = .white
+                UIApplication.shared.statusBarStyle = .default
+            }
+            else
+            {
+                view.backgroundColor = defaultBackgroundColor
+                UIApplication.shared.statusBarStyle = .lightContent
+            }
         }
     }
     
@@ -37,7 +52,13 @@ final class MainViewController: UIViewController, Viewer, Binder {
         wcSession.delegate = self
         wcSession.activate()
         
+        defaultBackgroundColor = view.backgroundColor
+        
         viewModel = MainViewModel(binder: self)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }
 
