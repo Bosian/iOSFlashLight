@@ -48,7 +48,7 @@ final class MainViewController: UIViewController, Viewer, Binder, Progressor {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let wcSession = WCSession.default()
+        let wcSession = WCSession.default
         wcSession.delegate = self
         wcSession.activate()
         

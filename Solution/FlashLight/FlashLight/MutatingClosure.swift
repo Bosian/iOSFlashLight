@@ -8,7 +8,7 @@
 
 protocol MutatingClosure {
     
-    weak var binder: Binder? { get set }
+    var binder: Binder? { get set }
     
     func closureForViewModel() -> Self?
     func setClosure(for newValue: Self?)

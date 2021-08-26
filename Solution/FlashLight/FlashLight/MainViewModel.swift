@@ -28,8 +28,8 @@ struct MainViewModel: MutatingClosure, Updateable {
             
             let copySelf = self
             
-            WCSession.default().activate()
-            WCSession.default().sendMessage(model.toDictionary(), replyHandler: { (jsonDictionary) in
+            WCSession.default.activate()
+            WCSession.default.sendMessage(model.toDictionary(), replyHandler: { (jsonDictionary) in
                 print(jsonDictionary)
                 
                 // UI Thread

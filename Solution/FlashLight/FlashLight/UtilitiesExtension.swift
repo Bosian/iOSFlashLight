@@ -30,7 +30,7 @@ extension Utilities
     
     public static var phoneFlashLightValue: Float {
         get {
-            guard let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo) else
+            guard let device = AVCaptureDevice.default(for: AVMediaType.video) else
             {
                 return 0.0
             }
@@ -60,7 +60,7 @@ extension Utilities
         }
         
         set {
-            guard let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo) else
+            guard let device = AVCaptureDevice.default(for: AVMediaType.video) else
             {
                 return
             }
@@ -78,7 +78,7 @@ extension Utilities
             do
             {
                 try device.lockForConfiguration()
-                try device.setTorchModeOnWithLevel(newValue)
+                try device.setTorchModeOn(level: newValue)
             }
             catch
             {
@@ -92,7 +92,7 @@ extension Utilities
         
         get
         {
-            guard let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo) else
+            guard let device = AVCaptureDevice.default(for: AVMediaType.video) else
             {
                 return false
             }
@@ -123,7 +123,7 @@ extension Utilities
         
         set
         {
-            guard let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo) else
+            guard let device = AVCaptureDevice.default(for: AVMediaType.video) else
             {
                 return
             }
@@ -144,7 +144,7 @@ extension Utilities
                 
                 if newValue
                 {
-                    try device.setTorchModeOnWithLevel(1.0)
+                    try device.setTorchModeOn(level: 1.0)
                 }
                 else
                 {

@@ -32,7 +32,7 @@ class InterfaceController: WKInterfaceController, Viewer, Binder {
             let textColor = viewModel.model.isWatchScreenLight ? darkColor : lightColor
             group.setBackgroundColor(backgroundColor)
             
-            let attributes = [NSForegroundColorAttributeName : textColor]
+            let attributes = [NSAttributedString.Key.foregroundColor : textColor]
             watchScreenSwitch.setAttributedTitle(NSAttributedString(string: "手錶螢幕", attributes: attributes))
             phoneScreenSwitch.setAttributedTitle(NSAttributedString(string: "手機螢幕", attributes: attributes))
             phoneFlashLightSwitch.setAttributedTitle(NSAttributedString(string: "手機手電筒", attributes: attributes))
@@ -45,14 +45,14 @@ class InterfaceController: WKInterfaceController, Viewer, Binder {
         }
         
         set {
-            viewModel = newValue as! ViewModelType
+            viewModel = newValue as? ViewModelType
         }
     }
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        let wcSession = WCSession.default()
+        let wcSession = WCSession.default
         wcSession.delegate = self
         wcSession.activate()
         
